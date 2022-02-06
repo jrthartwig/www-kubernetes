@@ -6,7 +6,7 @@ function App() {
   const [articles, setArticles] = useState();
 
   useEffect(() => {
-    fetch("/articles")
+    fetch("/api/articles")
       .then((res) => res.json())
       .then((res) => setArticles(res));
   }, []);

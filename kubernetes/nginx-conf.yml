@@ -21,7 +21,7 @@ data:
           try_files $uri $uri/ /index.html;
         }
 
-        location /articles {
+        location /api {
           proxy_pass http://api;
         }
       }
