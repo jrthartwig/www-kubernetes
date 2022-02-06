@@ -16,5 +16,13 @@ spec:
       - name: www
         image: www:latest
         imagePullPolicy: IfNotPresent 
+        volumeMounts: 
+        - name: nginx-conf 
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.prod.conf 
         ports:
         - containerPort: 80
+      volumes: 
+      - name: nginx-conf
+        configMap: 
+          name: nginx-conf
