@@ -27,6 +27,8 @@ function App() {
           Learn React
         </a>
         <h2>Hooray Articles</h2>
+        <h3>Hooray HMR</h3>
+
         {articles && (
           <ul>
             {articles.map((article) => (

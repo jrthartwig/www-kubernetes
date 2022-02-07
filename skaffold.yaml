@@ -1,0 +1,23 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: www-kubernetes
+build:
+  artifacts:
+  - image: www
+    sync: 
+      infer:
+      - '**/*.js'
+      - '**/*.css'
+    docker:
+      dockerfile: dev.Dockerfile
+portForward:
+- resourceType: deployment
+  resourceName: www-deployment
+  port: 3000
+  localPort: 3000
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/nginx-conf.yml
+    - kubernetes/www.yml
