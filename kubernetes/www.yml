@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: www
-        image: www:latest
+        image: www:212c8415f843d97ff8e5b3218bd2a3190546a2d0f554aedad4b305cee177cf38
         imagePullPolicy: IfNotPresent 
         volumeMounts: 
         - name: nginx-conf 
           mountPath: /etc/nginx/nginx.conf
           subPath: nginx.prod.conf 
         ports:
-        - containerPort: 80
+        - containerPort: 3000
       volumes: 
       - name: nginx-conf
         configMap: 
